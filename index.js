@@ -3,7 +3,6 @@ const axios = require('axios')
 module.exports = class {
 
   constructor () {
-    this.token = null
     axios.post('http://localhost:8080/light/yellow/only')
   }
 
