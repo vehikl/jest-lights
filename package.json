@@ -1,0 +1,19 @@
+{
+  "name": "jest-lights",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Vehikl Team <go@vehikl.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "jest": "^24"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "axios": "^0.19.0"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0"
+  }
+}
