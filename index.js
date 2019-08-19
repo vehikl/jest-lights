@@ -11,6 +11,6 @@ module.exports = class JestLightsReporter {
         ? api.green()
         : api.red()
     )
-      .then(() => api.off({ delay: 60000 }));
+      .then(() => api.off({ delay: 60000, alert: "none" }));
   }
 }
