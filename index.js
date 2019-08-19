@@ -7,7 +7,7 @@ module.exports = class JestLightsReporter {
 
   onRunComplete(_contexts, results) {
     return (
-      results.success
+      results.numFailedTests === 0
         ? api.green()
         : api.red()
     )
