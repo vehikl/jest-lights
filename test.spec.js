@@ -4,7 +4,7 @@ describe('it do stuff', () => {
     expect(false).toBeTruthy();
   });
 
-  it.only('passes', async () => {
+  it('passes', async () => {
     await new Promise(resolve => setTimeout(resolve, 1000));
     expect(true).toBeTruthy();
   })

@@ -2,7 +2,7 @@ const api = require('./lib/api.js');
 
 module.exports = class JestLightsReporter {
   onRunStart(_results, _options) {
-    return api.yellow();
+    return api.yellow({ alert: 'lselect' });
   }
 
   onRunComplete(_contexts, results) {
