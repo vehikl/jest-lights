@@ -1,3 +1,6 @@
 module.exports = {
-  watchPlugins: ["./index.js"]
+  reporters: [
+    "default",
+    "<rootDir>/index.js",
+  ],
 }

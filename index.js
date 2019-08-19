@@ -1,22 +1,21 @@
-const axios = require('axios')
+const api = require('./lib/api.js');
 
-module.exports = class {
+const delay = ms => new Promise((resolve) => {
+  setTimeout(resolve, ms);
+});
 
-  constructor () {
-    axios.post('http://localhost:8080/light/yellow/only')
+module.exports = class JestLightsReporter {
+  onRunStart(_results, _options) {
+    return api.yellow();
   }
 
-  apply (jestHooks) {
-    jestHooks.onTestRunComplete((results) => {
-      if (!results.success) {
-        return axios.post('http://localhost:8080/light/red/only')
-      }
+  onRunComplete(_contexts, results) {
+    const resultLight = results.success
+      ? api.green()
+      : api.red();
 
-      return axios.post('http://localhost:8080/light/green/only')
-    })
-
-    jestHooks.onFileChange(() => {
-      axios.post('http://localhost:8080/light/yellow/only')
-    })
+    return resultLight
+      .then(() => delay(5000))
+      .then(() => api.off());
   }
 }
