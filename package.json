@@ -1,5 +1,5 @@
 {
-  "name": "jest-lights",
+  "name": "@vehikl/jest-lights",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Vehikl Team <go@vehikl.com>",
